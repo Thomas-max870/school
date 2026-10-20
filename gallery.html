@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photo Gallery | St. Thomas Higher Secondary School, Kiliyanthara</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-contact">
+        <span>📍 Kiliyanthara P.O., Kannur Dist, Kerala - 670 706</span>
+        <span>📞 Phone: 0490 2420155</span>
+        <span>✉️ kilistthomashss@gmail.com</span>
+      </div>
+      <div class="top-bar-links">
+        <span>School Code: HS 14059 | HSS 13155</span>
+        <a href="admin.html">Admin Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & School Branding -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrapper">
+        <a href="index.html">
+          <img src="favicon.svg" alt="St. Thomas School Crest" class="school-logo">
+        </a>
+        <div class="school-title-area">
+          <h1>St. Thomas Higher Secondary School</h1>
+          <div class="school-subtitle">Kiliyanthara, Kannur, Kerala • Estd. 1964 / HSS 2010</div>
+          <div class="school-codes">Govt. Aided Institution | Corporate Educational Agency, Archdiocese of Tellicherry</div>
+        </div>
+      </div>
+      <div class="header-extra">
+        <strong>Our Inspiration</strong>
+        <span>St. Thomas the Apostle</span>
+        <div style="font-size: 0.78rem; color: #57606a;">"Learning Today. Leading Tomorrow."</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Primary Navigation Bar -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰ Menu
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="academics.html" class="nav-link">Academics</a></li>
+        <li class="nav-item"><a href="faculty.html" class="nav-link">Faculty</a></li>
+        <li class="nav-item"><a href="nss.html" class="nav-link">NSS</a></li>
+        <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+        <li class="nav-item active"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="announcements.html" class="nav-link">Announcements</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Title Banner -->
+  <section class="page-title-banner">
+    <div class="container">
+      <h1>School Photo Gallery</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>›</span> Photo Gallery
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Moments at St. Thomas HSS</h2>
+        <p>Photographs capturing our campus facilities, academic programs, student life, and NSS community outreach.</p>
+      </div>
+
+      <!-- Category Filter Controls -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="campus">School Campus</button>
+        <button class="filter-btn" data-filter="academic">Academic Activities</button>
+        <button class="filter-btn" data-filter="nss">NSS Activities</button>
+        <button class="filter-btn" data-filter="arts">Arts & Culture</button>
+        <button class="filter-btn" data-filter="sports">Sports</button>
+      </div>
+
+      <!-- Responsive Gallery Grid with Lightbox Data -->
+      <div class="gallery-grid">
+        
+        <!-- Photo 1: Main Campus -->
+        <div class="gallery-card" data-category="campus" data-title="St. Thomas HSS School Campus" data-desc="Main school building and entrance courtyard at Kiliyanthara, Kannur." data-full="image1.png">
+          <img src="image1.png" alt="Main School Campus" onerror="this.src='gallery1.jpg'">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Main Campus Building</div>
+            <div class="gallery-caption-category">School Campus</div>
+          </div>
+        </div>
+
+        <!-- Photo 2: NSS Community Service -->
+        <div class="gallery-card" data-category="nss" data-title="NSS Volunteers in Action" data-desc="National Service Scheme volunteers taking part in community service and field projects." data-full="nss_activity.jpg">
+          <img src="nss_activity.jpg" alt="NSS Volunteer Activity">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">NSS Community Outreach</div>
+            <div class="gallery-caption-category">NSS Activities</div>
+          </div>
+        </div>
+
+        <!-- Photo 3: Academic / Assembly Gathering -->
+        <div class="gallery-card" data-category="academic" data-title="School Assembly & Academic Session" data-desc="Students gathered during morning school assembly and general address." data-full="gallery1.jpg">
+          <img src="gallery1.jpg" alt="School Assembly">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">School Assembly</div>
+            <div class="gallery-caption-category">Academic Activities</div>
+          </div>
+        </div>
+
+        <!-- Photo 4: Arts & Culture -->
+        <div class="gallery-card" data-category="arts" data-title="Cultural Celebrations & Performances" data-desc="Students participating in traditional dance and school arts festival." data-full="gallery2.jpg">
+          <img src="gallery2.jpg" alt="Cultural Event">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Cultural Programme</div>
+            <div class="gallery-caption-category">Arts & Culture</div>
+          </div>
+        </div>
+
+        <!-- Photo 5: School Event -->
+        <div class="gallery-card" data-category="academic" data-title="Educational Seminar & Classroom Workshop" data-desc="Interactive seminar session conducted for higher secondary students." data-full="gallery3.jpg">
+          <img src="gallery3.jpg" alt="Classroom Seminar">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Classroom Seminar</div>
+            <div class="gallery-caption-category">Academic Activities</div>
+          </div>
+        </div>
+
+        <!-- Photo 6: Sports & Athletics -->
+        <div class="gallery-card" data-category="sports" data-title="School Sports Day Athletics" data-desc="Students competing enthusiastically in track events during the annual sports meet." data-full="gallery4.jpg">
+          <img src="gallery4.jpg" alt="Annual Sports Meet">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Annual Sports Meet</div>
+            <div class="gallery-caption-category">Sports</div>
+          </div>
+        </div>
+
+        <!-- Photo 7: Campus Life -->
+        <div class="gallery-card" data-category="campus" data-title="Campus Grounds & Student Activity" data-desc="Students interacting on the spacious school grounds during recreation hour." data-full="gallery5.jpg">
+          <img src="gallery5.jpg" alt="Campus Grounds">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Campus Grounds</div>
+            <div class="gallery-caption-category">School Campus</div>
+          </div>
+        </div>
+
+        <!-- Photo 8: Co-Curricular & Stage Events -->
+        <div class="gallery-card" data-category="arts" data-title="Stage Presentation & Annual Day" data-desc="Auditorium function featuring academic honors and cultural presentations." data-full="gallery6.jpg">
+          <img src="gallery6.jpg" alt="Auditorium Stage Event">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Auditorium Stage Event</div>
+            <div class="gallery-caption-category">Arts & Culture</div>
+          </div>
+        </div>
+
+        <!-- Photo 9: Environmental & Nature Club -->
+        <div class="gallery-card" data-category="nss" data-title="Nature Club & NSS Eco-Drive" data-desc="Planting saplings and cleaning surroundings around Kiliyanthara." data-full="gallery7.jpg">
+          <img src="gallery7.jpg" alt="NSS Environmental Drive">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Green Campus Initiative</div>
+            <div class="gallery-caption-category">NSS Activities</div>
+          </div>
+        </div>
+
+        <!-- Photo 10: Sports Competitions -->
+        <div class="gallery-card" data-category="sports" data-title="Outdoor Games & Tournament" data-desc="Inter-house sports competitions on the school ground." data-full="gallery8.jpg">
+          <img src="gallery8.jpg" alt="Sports Tournament">
+          <div class="gallery-caption">
+            <div class="gallery-caption-title">Inter-House Tournament</div>
+            <div class="gallery-caption-category">Sports</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="placeholder-callout" style="margin-top: 3rem;">
+        <strong>[Adding Photographs to the Gallery]</strong>
+        To add new photos to the gallery, save your JPG or PNG images into the <code></code> folder and add an entry with the corresponding category tag (<code>campus</code>, <code>academic</code>, <code>nss</code>, <code>arts</code>, or <code>sports</code>) in <code>gallery.html</code>, or use the Admin Portal interface.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo Preview">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close Preview">×</button>
+      <img id="lightboxImg" src="" alt="Photo preview">
+      <div class="lightbox-meta">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-desc" id="lightboxDesc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>St. Thomas HSS, Kiliyanthara</h4>
+        <p>
+          An aided Catholic minority educational institution recognized by the Department of General Education, Government of Kerala. Providing sound education grounded in moral values and academic excellence.
+        </p>
+        <p style="font-size: 0.85rem; color: #94a3b8;">
+          Patron: Mar George Njaralakatt<br>
+          Corporate Educational Agency, Archdiocese of Tellicherry
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Our School</a></li>
+          <li><a href="academics.html">Academic Programmes</a></li>
+          <li><a href="faculty.html">Teaching Faculty</a></li>
+          <li><a href="nss.html">NSS Unit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul class="footer-links">
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="announcements.html">School Notice Board</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="admin.html">Admin Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact & Location</h4>
+        <p>
+          St. Thomas Higher Secondary School<br>
+          Kiliyanthara P.O., Kannur - 670 706<br>
+          Kerala, India
+        </p>
+        <p>
+          Phone: 0490 2420155<br>
+          Mobile: +91 9846702152<br>
+          Email: kilistthomashss@gmail.com
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 St. Thomas Higher Secondary School, Kiliyanthara. All rights reserved. | Simple Static Website</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

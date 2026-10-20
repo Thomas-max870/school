@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin Interface | St. Thomas Higher Secondary School, Kiliyanthara</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-contact">
+        <span>🔒 School Content Administration Portal</span>
+        <span>St. Thomas HSS, Kiliyanthara</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="index.html">← Back to Public Website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" style="padding: 0.85rem 0;">
+    <div class="container header-inner">
+      <div class="brand-wrapper">
+        <a href="index.html">
+          <img src="favicon.svg" alt="St. Thomas Crest" class="school-logo" style="width: 50px; height: 50px;">
+        </a>
+        <div>
+          <h2 style="font-size: 1.35rem; margin-bottom: 0;">School Content Administration</h2>
+          <span style="font-size: 0.85rem; color: var(--color-text-muted);">Content updates, notice management, and cloud database configuration</span>
+        </div>
+      </div>
+      <div class="header-extra">
+        <a href="index.html" class="btn btn-outline btn-sm">View Live Site</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Interface Layout -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h2>Dashboard</h2>
+        <p>Static & Cloud Admin</p>
+      </div>
+
+      <ul class="admin-nav">
+        <li class="admin-nav-item">
+          <button type="button" class="active" data-tab="tab-announcements">
+            📢 Announcements
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-gallery">
+            🖼️ Photo Gallery
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-faculty">
+            👨‍🏫 Faculty Profiles
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-nss">
+            🤝 NSS Activities
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-achievements">
+            🏆 Achievements
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-events">
+            📅 School Events
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-school-info">
+            🏫 School Information
+          </button>
+        </li>
+        <li class="admin-nav-item">
+          <button type="button" data-tab="tab-cloud-setup">
+            ☁️ Firebase Setup Guide
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Content Workspace -->
+    <main class="admin-content">
+
+      <!-- Security / Static Architecture Notice -->
+      <div class="admin-alert-box">
+        <strong>⚠️ Architecture & Security Notice:</strong><br>
+        This website is currently a 100% static project running locally in your browser without requiring a server or external database.
+        For true security, passwords are <strong>not stored</strong> in front-end HTML or JavaScript files (as any client-side password can be easily inspected).
+        When you are ready to enable multi-user authenticated editing, follow the <strong>Firebase Setup Guide</strong> tab to link Firebase Authentication and Firestore.
+      </div>
+
+      <!-- Tab 1: Announcements -->
+      <div class="admin-tab-pane active" id="tab-announcements">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>Publish New Notice or Circular</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Creates an entry for display on <code>announcements.html</code> and the homepage.</p>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('In static mode: Copy this notice content into announcements.html, or connect Firebase Firestore for real-time live updates.');">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Notice Title <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="e.g. Higher Secondary First Term Exam Timetable" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category <span class="required">*</span></label>
+                <select class="form-control" required>
+                  <option value="academic">Academic & Admissions</option>
+                  <option value="exam">Examinations</option>
+                  <option value="nss">NSS Unit</option>
+                  <option value="general">General Notice</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Publication Date <span class="required">*</span></label>
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Issuing Authority</label>
+                <input type="text" class="form-control" placeholder="e.g. Office of the Principal">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Detailed Notice Text <span class="required">*</span></label>
+              <textarea class="form-control" placeholder="Enter complete description or instructions for parents and students..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Optional Circular Attachment (PDF)</label>
+              <input type="file" class="form-control" accept=".pdf,.doc,.docx">
+              <small style="color: var(--color-text-muted);">PDF files can be placed in a <code>docs/</code> folder and referenced in HTML.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Notice Draft</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab 2: Gallery -->
+      <div class="admin-tab-pane" id="tab-gallery">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>Upload & Manage Photo Gallery</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Add new photographs to <code>gallery.html</code>.</p>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('To add photos to the static site: copy your image file to the  folder, then add a gallery-card element in gallery.html.');">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Photo Title</label>
+                <input type="text" class="form-control" placeholder="e.g. Annual Sports Meet 100m Dash">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Gallery Category</label>
+                <select class="form-control">
+                  <option value="campus">School Campus</option>
+                  <option value="academic">Academic Activities</option>
+                  <option value="nss">NSS Activities</option>
+                  <option value="arts">Arts & Culture</option>
+                  <option value="sports">Sports</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Image File (JPG, PNG)</label>
+              <input type="file" class="form-control" accept="image/*">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Caption / Description</label>
+              <textarea class="form-control" placeholder="Short description of the event or activity..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Photo to Gallery</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab 3: Faculty -->
+      <div class="admin-tab-pane" id="tab-faculty">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>Faculty Directory Management</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Update staff rosters, subjects, or contact numbers on <code>faculty.html</code>.</p>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('Faculty details are stored cleanly in faculty.html. Update the roster there or connect Cloud Firestore.');">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Teacher Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Ancy Varghese">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Designation</label>
+                <input type="text" class="form-control" placeholder="e.g. HSST / HST / Principal">
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Subject / Discipline</label>
+                <input type="text" class="form-control" placeholder="e.g. Chemistry / Mathematics">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Department</label>
+                <select class="form-control">
+                  <option value="Science">Science Department</option>
+                  <option value="Commerce">Commerce Department</option>
+                  <option value="Languages">Languages (Malayalam, English, Hindi)</option>
+                  <option value="Computer">Computer Applications</option>
+                  <option value="HighSchool">High School Section</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Official Contact / Extension</label>
+              <input type="text" class="form-control" placeholder="Optional phone number or school extension">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Faculty Entry</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab 4: NSS Activities -->
+      <div class="admin-tab-pane" id="tab-nss">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>National Service Scheme (NSS) Records</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Record unit programs, volunteer counts, and annual special camps on <code>nss.html</code>.</p>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('NSS details can be updated in nss.html or stored in Firestore.');">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Activity Title</label>
+                <input type="text" class="form-control" placeholder="e.g. World Environment Day Sapling Plantation">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Activity Category</label>
+                <select class="form-control">
+                  <option value="Environment">Environmental / Green Campus</option>
+                  <option value="Community">Village Outreach / Sanitation</option>
+                  <option value="Agriculture">Organic Farming Project</option>
+                  <option value="Camp">Annual 7-Day Residential Camp</option>
+                  <option value="Health">Blood Donation / Health Camp</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Date Conducted</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Participating Volunteers</label>
+                <input type="number" class="form-control" placeholder="e.g. 50">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Report & Outcomes</label>
+              <textarea class="form-control" placeholder="Summary of community service carried out, location, and outcomes..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save NSS Record</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab 5: Achievements -->
+      <div class="admin-tab-pane" id="tab-achievements">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>Student Honors & School Achievements</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Publish verified results on <code>achievements.html</code>.</p>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('Add verified student awards directly into achievements.html.');">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Student / Team Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Class XII Science Batch 2026">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category</label>
+                <select class="form-control">
+                  <option value="BoardExam">Board Exam (SSLC / DHSE Full A+)</option>
+                  <option value="Kalolsavam">Arts & Kalolsavam</option>
+                  <option value="Sports">Sports & Athletics</option>
+                  <option value="Science">Science Fair & Olympiad</option>
+                  <option value="NSS">NSS Award / Recognition</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Award / Rank Secured</label>
+                <input type="text" class="form-control" placeholder="e.g. First Prize in District Level Elocution">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Academic Year</label>
+                <input type="text" class="form-control" placeholder="e.g. 2025-2026">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Publish Achievement</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab 6: Events -->
+      <div class="admin-tab-pane" id="tab-events">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>School Events & Academic Calendar</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Schedule assemblies, sports days, and celebrations.</p>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('Event scheduled. For public broadcast, append to announcements.html.');">
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Event Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Annual School Day & Kalolsavam">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Event Date</label>
+                <input type="date" class="form-control">
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label">Venue</label>
+                <input type="text" class="form-control" placeholder="e.g. School Main Auditorium">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Time</label>
+                <input type="text" class="form-control" placeholder="e.g. 10:00 AM - 3:30 PM">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Calendar Event</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab 7: School Info -->
+      <div class="admin-tab-pane" id="tab-school-info">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>General School Credentials & Metadata</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Verified institutional data for reference across site headers and footers.</p>
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label">Official Institution Name</label>
+              <input type="text" class="form-control" value="St. Thomas Higher Secondary School, Kiliyanthara" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Postal Address</label>
+              <input type="text" class="form-control" value="Kiliyanthara P.O., Kannur District, Kerala - 670 706" readonly>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="form-group">
+              <label class="form-label">High School Code</label>
+              <input type="text" class="form-control" value="14059" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Higher Secondary Code</label>
+              <input type="text" class="form-control" value="13155" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">UDISE Code</label>
+              <input type="text" class="form-control" value="32020901809" readonly>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label">Office Telephone</label>
+              <input type="text" class="form-control" value="0490 2420155" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Contact</label>
+              <input type="text" class="form-control" value="+91 9846702152" readonly>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Official Email</label>
+            <input type="text" class="form-control" value="kilistthomashss@gmail.com" readonly>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 8: Firebase & Cloud CMS Setup Guide -->
+      <div class="admin-tab-pane" id="tab-cloud-setup">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>How to Connect Firebase for Live Multi-User Admin</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Step-by-step instructions for adding real authentication and cloud database updates.</p>
+          </div>
+          
+          <div style="font-size: 0.95rem; line-height: 1.7; color: var(--color-text-main);">
+            <p>
+              To allow school administrators to securely log in, publish notices, and upload photos directly from a browser without modifying HTML code manually, follow these steps using Google Firebase (which provides a generous free tier):
+            </p>
+
+            <h4 style="color: var(--color-primary); margin-top: 1.5rem;">Step 1: Create a Free Firebase Project</h4>
+            <ol>
+              <li>Go to <a href="https://console.firebase.google.com/" target="_blank" style="color: var(--color-primary); text-decoration: underline;">https://console.firebase.google.com/</a>.</li>
+              <li>Click <strong>"Add project"</strong> and name it (e.g. <code>st-thomas-kiliyanthara</code>).</li>
+              <li>Under <strong>Project Settings</strong>, click <strong>"Add web app"</strong> to obtain your project configuration keys.</li>
+            </ol>
+
+            <h4 style="color: var(--color-primary); margin-top: 1.5rem;">Step 2: Enable Firebase Authentication</h4>
+            <ol>
+              <li>Navigate to <strong>Authentication</strong> &gt; <strong>Sign-in method</strong>.</li>
+              <li>Enable <strong>Email/Password</strong> authentication.</li>
+              <li>Add the school administrator's email (e.g. <code>admin@stthomashss.org</code>) under the <strong>Users</strong> tab.</li>
+              <li>This ensures that only authorized staff with verified credentials can make changes.</li>
+            </ol>
+
+            <h4 style="color: var(--color-primary); margin-top: 1.5rem;">Step 3: Enable Cloud Firestore</h4>
+            <ol>
+              <li>Go to <strong>Firestore Database</strong> and click <strong>Create database</strong>.</li>
+              <li>Set up collections such as <code>announcements</code>, <code>gallery</code>, and <code>faculty</code>.</li>
+              <li>Set Firestore Security Rules to allow <em>read</em> access for the public website, and <em>write</em> access only for authenticated users:
+                <pre style="background: #f1f5f9; padding: 1rem; border: 1px solid var(--color-border); margin: 0.5rem 0; overflow-x: auto; font-size: 0.85rem;">
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}</pre>
+              </li>
+            </ol>
+
+            <h4 style="color: var(--color-primary); margin-top: 1.5rem;">Step 4: Enable Firebase Storage (for Photos & Circulars)</h4>
+            <ol>
+              <li>Navigate to <strong>Storage</strong> and click <strong>Get started</strong>.</li>
+              <li>Configure rules to allow public downloads and authenticated uploads.</li>
+              <li>Uploaded event photographs will generate direct public download URLs that can be saved into Firestore.</li>
+            </ol>
+
+            <div style="background-color: var(--color-accent-blue); padding: 1rem; border-left: 4px solid var(--color-primary); margin-top: 1.5rem;">
+              <strong>Alternative: Netlify CMS / Decap CMS</strong><br>
+              If deploying to Netlify, you can alternatively enable <strong>Decap CMS</strong> (formerly Netlify CMS). It uses Git commits under the hood to store content directly in your repository without any external database fees.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" style="padding-top: 2rem;">
+    <div class="footer-bottom" style="background-color: var(--color-primary-dark);">
+      <div class="container">
+        <p>© 2026 St. Thomas Higher Secondary School, Kiliyanthara • Administration Interface</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
